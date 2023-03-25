@@ -1,5 +1,5 @@
 # Fidenz Technologies - Front-end Assignment
-![screenshot](/public/assets/img/assignment-screenshot.png "weather app screenshot")
+![screenshot](/public/assets/img/assignmentScreenshot.png "weather app screenshot")
 ## Introduction
 The assignment is to read the cities.json file and extract the 'CityCode' codes from it. Using CityCode as reference then you will call openweathermap.org weather APIs to get the latest weather information and present it as a provided UI design.
 ## Tools in will use
