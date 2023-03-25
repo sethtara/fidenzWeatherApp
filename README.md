@@ -18,8 +18,10 @@ $ git clone https://github.com/sethtara/fidenzWeatherApp.git
 ```
 
 - For manual installation
-  Make sure you have npm installed [install npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm/)
-  Inside the /fidenzWeatherApp in terminal run
+
+    Make sure you have npm installed [install npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm/)
+   
+   Inside the /fidenzWeatherApp in terminal run
 
 ```console
 $ npm install
