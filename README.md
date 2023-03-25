@@ -4,10 +4,10 @@
 The assignment is to read the cities.json file and extract the 'CityCode' codes from it. Using CityCode as reference then you will call openweathermap.org weather APIs to get the latest weather information and present it as a provided UI design.
 ## Tools in will use
 - Node.js
-- Express.js
+- Reactjs 
 - npm
 - docker
-- openweather API (already provided incase you want to change, it is in /public/assets/js/script.js )
+- openweather API already provided incase you want to change, it is .env
 
 
 ## Installations
@@ -34,8 +34,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-
-- Using docker
+### Using docker
   [install docker](https://docs.docker.com/get-docker/)
   Inside the /fidenzWeatherApp in terminal run
   this will build an image
