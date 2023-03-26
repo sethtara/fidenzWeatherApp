@@ -18,7 +18,9 @@ function WeatherCard(props) {
     const dt = data?.dt;
     
     // Convert the timestamp to a date object and extract the date and time strings
-    const now = new Date((dt + timezoneOffset) * 1000);
+    const currentZoneOffset = new Date().getTimezoneOffset()*60;
+    const now = new Date((dt + timezoneOffset + currentZoneOffset) * 1000);
+    
     const date = now.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
     const time = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit'});    
     const sunrise = new Date(sys?.sunrise * 1000);
