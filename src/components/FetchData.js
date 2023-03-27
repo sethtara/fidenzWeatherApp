@@ -1,21 +1,20 @@
+import * as CONST from './constants';
+
 //function that returns weather data for a given city ID and also chache the data for 5 mins
 async function FetchData(cityId) {
-    const apiUrl = `http://api.openweathermap.org/data/2.5/weather?id=${cityId}&appid=${process.env.REACT_APP_API_KEY}&units=metric`;
-    
     const cacheKey = `weatherData-${cityId}`;
     const cachedData = localStorage.getItem(cacheKey);
     if (cachedData !== null) {
-      const { data, timestamp } = JSON.parse(cachedData);
-      const fiveMinutes = 5 * 60 * 1000;
-      if (Date.now() - timestamp <= fiveMinutes) {
+      const { data, timeStamp } = JSON.parse(cachedData);
+      if (CONST.DateNow - timeStamp <= CONST.cacheTime) {
         return data;
       }
     }
     try {
-      const response = await fetch(apiUrl);
+      const response = await fetch(CONST.apiUrl(cityId));
       const data = await response.json();
-      const timestamp = Date.now();
-      localStorage.setItem(cacheKey, JSON.stringify({ data, timestamp }));
+      const timeStamp = CONST.DateNow;
+      localStorage.setItem(cacheKey, JSON.stringify({ data, timeStamp }));
       return data;
     } catch (error) {
       console.error(error);

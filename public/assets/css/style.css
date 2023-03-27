@@ -99,27 +99,10 @@ footer {
  font-size: 12px;
    font-weight: bold;
 }
-/* for devices sizes less than 480px */
-@media (max-width: 480px) {
- body{
-   background-size: auto;
- }
- .card,
- .card_down {
-   width: 320px;
- }
- .rec_up {
-   width: 160px;
- }
- #city_name{
-   font-size: 20px;
- }
-
-}
 
 /* few tweaks for the weather typo's and alighnments */
 #city_name {
-   font-size: 24px;
+   font-size: 22px;
    font-weight: bold;
  }
  #time_date {
@@ -130,7 +113,12 @@ footer {
    font-size: 14px;
    margin-left: -8px;
  }
-
+ #description img{
+  width: 40px;
+ }
+#windicon img{
+  width: 20px;
+}
  #min_temp,#max_temp{
    font-size: 12px;
    font-weight: bold;
@@ -162,4 +150,27 @@ footer {
    margin-left: 8px;
  }
 
-       
+
+
+ /* for devices sizes less than 480px */
+@media (max-width: 480px) {
+  body{
+    background-size: auto;
+  }
+  .card,
+  .card_down {
+    width: 320px;
+  }
+  .rec_up {
+    width: 160px;
+  }
+  #city_name{
+    font-size: 20px;
+  }
+  #description {
+   margin-top: 8px;
+   font-size: 12px;
+   margin-left: -15px;
+ }
+ 
+ }
