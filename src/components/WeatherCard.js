@@ -7,23 +7,21 @@ function WeatherCard(props) {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        FetchData(props.cityId).then((result) => {
+        const fetchData = async () => {
+          try {
+            const result = await FetchData(props.cityId);
             setData(result);
-        }).catch((error) => {
+          } catch (error) {
             console.log(error);
-        });
-        const interval = setInterval(() => {
-
-            FetchData(props.cityId).then((result) => {
-                setData(result);
-            }).catch((error) => {
-                console.log(error);
-            });
-        }, 20* 1000);
-
+          }
+        };
+    
+        fetchData();
+    
+        const interval = setInterval(fetchData, 20 * 1000);
+    
         return () => clearInterval(interval);
-
-    }, [props.cityId]);
+      }, [props.cityId]);
 
     const { name, sys, main, wind, weather } = data;
 

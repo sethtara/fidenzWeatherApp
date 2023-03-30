@@ -49,7 +49,9 @@ footer {
 }
 
 .weather_cards {
- margin-top: 32px;
+  margin: auto;
+  width: 800px;
+  margin-top: 16px;
 }
 /* for the weather cards layout using flex */
 .card {
@@ -151,8 +153,8 @@ footer {
  }
 
 
-
  /* for devices sizes less than 480px */
+
 @media (max-width: 480px) {
   body{
     background-size: auto;
@@ -174,3 +176,4 @@ footer {
  }
  
  }
+
