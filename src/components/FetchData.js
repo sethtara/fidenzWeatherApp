@@ -8,13 +8,13 @@ async function FetchData(cityId) {
     if (cachedData !== null) {
       if (cityId==='1248991'){
         const { data } = JSON.parse(cachedData);
-        if (CONST.DateNow - (1*60*1000) <= CONST.cacheTime) {
+        if (CONST.DateNow - (30*1000) <= CONST.cacheTime) {
           return data;
         }
       }
       else{
         const { data } = JSON.parse(cachedData);
-        if (CONST.DateNow - (5*60*1000) <= CONST.cacheTime) {
+        if (CONST.DateNow - (1*60*1000) <= CONST.cacheTime) {
           return data;
       }
 
@@ -24,7 +24,7 @@ async function FetchData(cityId) {
       const response = await fetch(CONST.apiUrl(cityId));
       const data = await response.json();
       const timeStamp = CONST.DateNow;
-      
+
       localStorage.setItem(cacheKey, JSON.stringify({ data, timeStamp }));
       return data;
     } catch (error) {
