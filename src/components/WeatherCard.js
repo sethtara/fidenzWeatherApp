@@ -5,7 +5,7 @@ import * as CONST from './constants';
 //weather card component
 function WeatherCard(props) {
     const [data, setData] = useState([]);
-
+    
     useEffect(() => {
         FetchData(props.cityId).then((result) => {
             setData(result);

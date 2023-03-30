@@ -9,13 +9,14 @@ export const cacheTime = 5 * 60 * 1000; //five minutes
 export const degCelcius="ºc";
 export const formatTime=(value)=>value.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
 export const formatDate=(value)=>value.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+
 export const DateNow = Date.now();
-export const newDateInMs=(value)=> new Date(value * 1000); //returns in milliseconds
+export const newDateInMs=(value)=> new Date(value * 1000); 
 
 export const getSunTime=(Value)=> formatTime(newDateInMs(Value)); //returns the formated time values
 
 export const currentZoneOffset = new Date().getTimezoneOffset()*60;
-export const getUnixValueNow=(dateTime,timezoneOffset)=>newDateInMs(dateTime+timezoneOffset+currentZoneOffset);
+export const getUnixValueNow=(dateTime,timezone)=>newDateInMs(dateTime+timezone+currentZoneOffset);
 
 
     
