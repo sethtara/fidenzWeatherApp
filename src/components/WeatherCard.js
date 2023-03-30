@@ -21,6 +21,7 @@ function WeatherCard(props) {
         const interval = setInterval(fetchData, 20 * 1000);
     
         return () => clearInterval(interval);
+        
       }, [props.cityId]);
 
     const { name, sys, main, wind, weather } = data;
