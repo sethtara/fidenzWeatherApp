@@ -17,11 +17,9 @@ function WeatherCard(props) {
         };
     
         fetchData();
-    
         const interval = setInterval(fetchData, 20 * 1000);
-    
         return () => clearInterval(interval);
-        
+
       }, [props.cityId]);
 
     const { name, sys, main, wind, weather } = data;
@@ -34,7 +32,10 @@ function WeatherCard(props) {
                     <div id="city_name">
                         {name}, {sys?.country}
                     </div>
-                    <div id="time_date">{CONST.formatTime(CONST.getUnixValueNow(data?.dt, data?.timezone))}, {CONST.formatDate(CONST.getUnixValueNow(data?.dt, data?.timezone))}</div>
+                    <div id="time_date">
+                        {CONST.formatTime(CONST.getUnixValueNow(data?.dt, data?.timezone))}, 
+                        {CONST.formatDate(CONST.getUnixValueNow(data?.dt, data?.timezone))}
+                    </div>
                     <div id="description">
                         {weather && weather[0] && (
                             <>
@@ -70,6 +71,7 @@ function WeatherCard(props) {
                 </div>
             </div>
         </div>
+
     );
 }
 
