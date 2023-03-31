@@ -38,10 +38,10 @@ function WeatherCard(props) {
                     </div>
                     <div id="description">
                         {weather && weather[0] && (
-                            <>
+                            <div>
                                 <img src={`assets/img/weatherIcons/${weather[0]?.icon}.png`} alt="" />
                                 {weather[0]?.description}
-                            </>
+                            </div>
                         )}
                     </div>
                 </div>
