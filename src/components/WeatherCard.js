@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import FetchData from "./FetchData";
-import * as CONST from './constants';
+import * as CONST from '../utils/constants';
 
 //weather card component
 function WeatherCard(props) {

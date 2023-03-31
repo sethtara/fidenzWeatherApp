@@ -1,7 +1,7 @@
 import React from "react";
 import './css/App.css';
 import WeatherCard from "./components/WeatherCard"
-import * as CONST from './components/constants';
+import * as CONST from './utils/constants';
 
 function App() {
 

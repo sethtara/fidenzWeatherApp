@@ -1,4 +1,4 @@
-import * as CONST from './constants';
+import * as CONST from '../utils/constants';
 import LRU from 'lru-cache'; 
 
 // create a cache with a maximum size of 10 items
