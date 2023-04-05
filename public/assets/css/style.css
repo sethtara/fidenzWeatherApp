@@ -6,11 +6,13 @@ body {
   background-size: 100%;
 }
 
-header img {
-  height: 48px;
-  width: 180px;
+.contents{
+  margin-top:24px;
 }
-
+.navbar-brand img{
+    width: 180px;
+    
+}
 footer {
   text-align: center;
   position: static;
@@ -174,13 +176,23 @@ footer {
    margin-left: 8px;
  }
 
+ @media (max-width: 1000px) {
+ 
 
+  .weather_cards {
+    width: auto;
+  }
+}
  /* for devices sizes less than 480px */
 
 @media (max-width: 480px) {
   body{
     background-size: auto;
   }
+  .navbar-brand img{
+    width: 140px;
+    
+}
   .card,
   .card_down {
     width: 320px;
