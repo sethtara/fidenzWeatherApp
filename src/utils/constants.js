@@ -1,7 +1,7 @@
 //Constants used in the app
 
 export const apiUrl = (cityId) =>
-  `http://api.openweathermap.org/data/2.5/weather?id=${cityId}&appid=${process.env.REACT_APP_API_KEY}&units=metric`;
+  `https://api.openweathermap.org/data/2.5/weather?id=${cityId}&appid=${process.env.REACT_APP_API_KEY}&units=metric`;
 
 export const colors = [
   "#388EE7",

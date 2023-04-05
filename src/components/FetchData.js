@@ -1,40 +1,48 @@
-import * as CONST from '../utils/constants';
-import LRU from 'lru-cache'; 
+import * as CONST from "../utils/constants";
 
-// create a cache with a maximum size of 10 items
-const cache = new LRU({ max: 100 });
+const promiseCache = {};
 
-//function that returns weather data for a given city ID and also caches the data for 5 mins
+// function that returns weather data for a given city ID and also caches the data for 5 minutes
 async function FetchData(cityId) {
   const cacheKey = `weatherData-${cityId}`;
-  const cachedData = cache.get(cacheKey);
+  const cachedData = localStorage.getItem(cacheKey);
 
-  if (cachedData) {
-    if (cityId === '1248991') {
-      const { data, timestamp } = cachedData;
-      if (CONST.DateNow - timestamp <= 30 * 1000) {
+  if (cachedData !== null) {
+    const { data, timeStamp } = JSON.parse(cachedData);
+    if (cityId === "1248991") {
+      if (CONST.DateNow - 30 * 1000 <= timeStamp) {
         return data;
       }
     } else {
-      const { data, timestamp } = cachedData;
-      if (CONST.DateNow - timestamp <= 1 * 60 * 1000) {
+      if (CONST.DateNow - 1 * 60 * 1000 <= timeStamp) {
         return data;
       }
     }
   }
 
-  try {
-    const response = await fetch(CONST.apiUrl(cityId));
-    const data = await response.json();
-    const timestamp = CONST.DateNow;
-
-    // add the data to the cache
-    cache.set(cacheKey, { data, timestamp });
-
-    return data;
-  } catch (error) {
-    console.error(error);
+  if (promiseCache[cityId]) {
+    return promiseCache[cityId];
   }
+
+  const promise = (async () => {
+    try {
+      const response = await fetch(CONST.apiUrl(cityId));
+      const data = await response.json();
+      const timeStamp = CONST.DateNow;
+
+      localStorage.setItem(cacheKey, JSON.stringify({ data, timeStamp }));
+
+      delete promiseCache[cityId];
+
+      return data;
+    } catch (error) {
+      console.error(error);
+    }
+  })();
+
+  promiseCache[cityId] = promise;
+
+  return promise;
 }
 
 export default FetchData;

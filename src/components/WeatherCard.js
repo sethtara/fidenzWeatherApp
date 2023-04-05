@@ -25,8 +25,8 @@ function WeatherCard(props) {
 
   return (
     //updates the HTML document with weather data and a background color
-    <div class="card">
-      <div class="card_up" style={{ backgroundColor: `${props.bgColor}` }}>
+    <div className="card">
+      <div className="card_up" style={{ backgroundColor: `${props.bgColor}` }}>
         <div className="rec_up">
           <div id="city_name">
             {name}, {sys?.country}
@@ -93,7 +93,7 @@ function WeatherCard(props) {
             {wind?.speed.toFixed(0)}m/s {wind?.deg}&#176;
           </div>
         </div>
-        <div class="rec_down">
+        <div className="rec_down">
           <div id="sunrise">
             <b>Sunrise: </b> {CONST.getSunTime(sys?.sunrise)}
           </div>
