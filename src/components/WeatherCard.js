@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import FetchData from "./FetchData";
+
 import * as CONST from "../utils/constants";
 
 //weather card component
 function WeatherCard(props) {
   const [data, setData] = useState([]);
-
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -23,9 +24,13 @@ function WeatherCard(props) {
 
   const { name, sys, main, wind, weather } = data;
 
+  const handleCardClick = () => {
+    window.location.href = `/city/${props.cityId}`;
+  };
+
   return (
     //updates the HTML document with weather data and a background color
-    <div className="card">
+    <div className="card" onClick={handleCardClick}>
       <div className="card_up" style={{ backgroundColor: `${props.bgColor}` }}>
         <div className="rec_up">
           <div id="city_name">

@@ -8,13 +8,13 @@ async function FetchData(cityId) {
   const cachedData = localStorage.getItem(cacheKey);
 
   if (cachedData !== null) {
-    const { data, timeStamp } = JSON.parse(cachedData);
+    const { data } = JSON.parse(cachedData);
     if (cityId === "1248991") {
-      if (CONST.DateNow - 30 * 1000 <= timeStamp) {
+      if (CONST.DateNow - 30 * 1000 <= data.dt) {
         return data;
       }
     } else {
-      if (CONST.DateNow - 1 * 60 * 1000 <= timeStamp) {
+      if (CONST.DateNow - 1 * 60 * 1000 <= data.dt) {
         return data;
       }
     }

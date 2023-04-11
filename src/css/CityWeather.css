@@ -1,0 +1,152 @@
+
+
+.city_card {
+    margin: 20px auto;
+    width: 520px;
+    height: 360px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    background:#388ee7;
+  }
+  
+  .city_card_up {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: #fff;
+  }
+  
+  .city_card_down {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: #383b47;
+    color:white;
+  }
+  
+  .city_rec_up {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .city_temp_r {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  #city_city_name {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  #city_time_date {
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 8px;
+  }
+  
+  #city_description {
+    display: flex;
+    flex-direction: row;
+  
+  }
+  
+  #city_description img {
+    width: 64px;
+   
+  }
+  
+  .city_descr{
+    align-items: center;
+    font-size: 18px;
+  }
+  #city_windicon img {
+    width: 32px;
+    padding-left: 32px;
+    padding-right: 32px;
+    margin: 8px;
+  }
+  #city_temp {
+    font-size: 64px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  #city_min_temp,
+  #city_max_temp {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  #city_pressure,
+  #city_humidity,
+  #city_visibility,
+  #city_sunrise,
+  #city_sunset {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  #city_windicon {
+  
+    margin-bottom: 16px;
+  }
+  
+  #city_wind {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .close_button{
+    position: absolute;
+    padding: 8px;
+    width: 96px;
+    background-color: #383b47;
+    border:none;
+    border-radius: 8px;
+    color:white;
+    font-weight: bolder;
+    cursor: pointer;
+  
+  }
+  
+  @media (max-width:640px) {
+    .city_card{
+      transform: scale(0.8);
+    }
+  }
+  @media (max-width:480px) {
+  
+    .city_card{
+      transform: scale(0.6);
+      margin-left:-72px;
+    }
+  }
+  
+  footer {
+    text-align: center;
+    position: static;
+    height: 48px;
+    font-family: monospace;
+    color: #87888c;
+    font-size: 12px;
+    background-color: #383b47;
+    padding: 16px;
+    margin-top: 48px;
+  }

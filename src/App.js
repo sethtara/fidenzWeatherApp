@@ -10,6 +10,9 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import CityWeather from "./components/CityWeather";
+
 function NavBar() {
   const { user, loginWithRedirect, isAuthenticated, logout } = useAuth0();
   return (
@@ -54,6 +57,7 @@ function App() {
     <WeatherCard
       key={city.CityCode}
       cityId={city.CityCode}
+      cityName={city.CityName}
       bgColor={CONST.colors[index % CONST.colors.length]}
     />
   ));
@@ -61,9 +65,14 @@ function App() {
   return (
     <>
       <NavBar></NavBar>
-      {isAuthenticated && (
-        <>
-          <div className="container contents">
+
+          <Router>
+        <Switch>
+          <Route exact path="/">
+
+          {isAuthenticated&&(
+            <>
+              <div className="container contents">
             <div className="row">
               <div className="input-group search-box">
                 <input
@@ -84,9 +93,17 @@ function App() {
           <div className="container">
             <div className="row App weather_cards">{weatherCards}</div>
           </div>
+            </>
+          )}
+          </Route>
+          <Route path="/city/:cityId">
+            <CityWeather />
+          </Route>
+          </Switch>
+        </Router>
         </>
-      )}
-    </>
+      
+
   );
 }
 export default App;

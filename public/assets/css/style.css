@@ -74,10 +74,15 @@ footer {
   margin: 16px;
   color: #ffffff;
   background-color: #383b47;
-}
+  cursor: pointer;
+  transition: all 0.5s ease-out;
 
-.card:hover {
+}
+.card:hover{
+  transform: scale(1.05);
+  transition: all 0.5s ease-out;
   box-shadow: 4px 4px 4px rgba(159, 159, 159, 0.1);
+
 }
 
 .card_up {
